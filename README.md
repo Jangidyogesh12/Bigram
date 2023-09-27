@@ -1,3 +1,1 @@
-# Hello World
-# Hello World
-# Hello World
+# Working to make the Transformer from scratch
