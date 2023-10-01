@@ -54,5 +54,3 @@ def most_likely(char, prob_dict, n_similar_items):
 
 x = calc_prob(lst_of_bigram)
 print(most_likely('e', x, 5))
-
-

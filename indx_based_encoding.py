@@ -9,8 +9,9 @@ cur = con.cursor()
 
 path = "D:\Encoder\english.txt"
 
-#function to read the file and tokeize it
-def tokenize(path):
+'''The index function return;s a dictionary with string as key
+   and there (index + 1) as a value in a sorted way'''
+def index(path):
     # Open the file in read mode ('r')
     with open(path,'+r', encoding = 'utf-8') as file:
         # Read the entire content of the file
@@ -20,7 +21,6 @@ def tokenize(path):
         file.seek(0)
         file.write(new_data)
         file.truncate()
-
     # Now, 'data' contains the entire content of the file
 
     #Now spliting the data in to the tokens
@@ -40,8 +40,10 @@ def tokenize(path):
     return dict
 
 
-dict = tokenize(path)
-print(dict)
+dict = index(path)
+'''the text_split function split the text into the diffetent and group
+   them into different chucks according to the cunk size'''
+
 def text_split(text, chunk_size):
     tokens = word_tokenize(text)
     l = []
@@ -62,7 +64,6 @@ def text_split(text, chunk_size):
 
 text = "a lovely river called nallar flows through the chambal forest. there was a fox named kullan. the"
 tokens = text_split(text, 10)
-print(tokens)
 vector_embeding = [] 
 
 for token in tokens:

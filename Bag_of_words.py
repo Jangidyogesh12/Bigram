@@ -1,4 +1,16 @@
-data_corpus = ["a" , "bad" , "cat" , "good" , "has" , "he" , "is" , "mobile" , "not" , "phone" , "she" , "temper" , "this"]
+data =  ["this is a good phone" , "this is a bad mobile" , "she is a good cat" , "he has a bad temper" , "this mobile phone is not good"]
+
+'''Function to create the data corpus'''
+def create_corpus(data):
+    data_corpus = []
+    for i in data:
+        for j in i.split():
+            if(j not in data_corpus):
+                data_corpus.append(j)     
+    data_corpus.sort()
+    return data_corpus
+   
+data_corpus = create_corpus(data)
 
 data1 = "this is a good phone"
 def tokenise(data):
